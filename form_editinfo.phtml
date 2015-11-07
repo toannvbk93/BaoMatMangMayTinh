@@ -1,0 +1,69 @@
+<?php
+	echo "<form action='editInfoUser.php' method='post'>
+			<fieldset><center>
+				<legend>
+				Edit your profile
+				</legend></center>
+				<div style='padding-left:37px;'>
+				<label>
+					User name:
+				</label>
+				<div class='input-control text size4' data-role='input-control'>
+					<input type='text' value='".$userInfo[0]."' name='uname' disabled></input>
+					<button class='btn-clear' tabindex='-1' type='button'></button>
+				</div>
+				<label>
+					Password:
+				</label>
+				<div class='input-control password size4' data-role='input-control'>
+					<input type='Password' autofocus='' placeholder='password' name='pass'></input>
+					<button class='btn-reveal' tabindex='-1' type='button'></button>
+				</div>
+				<label>
+					Confirm Password:
+				</label>
+				<div class='input-control password size4' data-role='input-control'>
+					<input type='Password' autofocus='' placeholder='re-password' name='repass'></input>
+					<button class='btn-reveal' tabindex='-1' type='button'></button>
+				</div>
+				<label>
+					Full name:
+				</label>
+				<div class='input-control text size4' data-role='input-control'>
+					<input type='text' value='".$userInfo[2]."' name='fullname'></input>
+					<button class='btn-clear' tabindex='-1' type='button'></button>
+				</div>
+				<label>
+					Birthday:
+				</label>
+				<div class='input-control text size4' data-role='datepicker' data-week-start='1'>
+					<input type='text' readonly='readonly' autofocus='' value='".$userInfo[3]."' name='birthday'></input>
+					<button class='btn-date' type='button'></button>
+				</div>
+				<label>
+					Job:
+				</label>
+				<div class='input-control text size4' data-role='input-control'>
+					<input type='text' autofocus='' value='".$userInfo[5]."' name='job'></input>
+					<button class='btn-clear' tabindex='-1' type='button'></button>
+				</div>
+				<label>
+					Nationality:
+				</label>
+				<div class='input-control text size4' data-role='input-control'>
+					<input type='text' autofocus='' value='".$userInfo[4]."' name='nationality'></input>
+					<button class='btn-clear' tabindex='-1' type='button'></button>
+				</div>
+				<label>
+					Balance:
+				</label>
+				<div class='input-control text size4' data-role='input-control'>
+					<input type='text' autofocus='' value='".$userInfo[6]."' name='balance'></input>
+					<button class='btn-clear' tabindex='-1' type='button'></button>
+				</div>
+				<br><br>
+				<input type='submit' value='Change Account'></input>
+				</div>
+			</fieldset>
+		</form>";
+?>

